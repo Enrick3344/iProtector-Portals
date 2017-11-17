@@ -14,7 +14,7 @@ class PortalCommand extends VanillaCommand {
         $this->plugin = $plugin;
     }
 
-    public function execute(CommandSender $sender, $currentAlias, array $args) {
+    public function execute(CommandSender $sender, string $currentAlias, array $args): bool {
         if(!$this->testPermission($sender)) {
             return true;
         }
@@ -93,6 +93,7 @@ class PortalCommand extends VanillaCommand {
                 $sender->sendMessage("§aPortals:§f " . $portals);
                 return true;
         }
+        return true;
     }
 
 }
